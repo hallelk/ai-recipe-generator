@@ -9,6 +9,7 @@ import { Amplify } from 'aws-amplify';
 
 // const client = generateClient<Schema>();
 async function loadConfig() {
+  console.log(process.env.NODE_ENV);
   if (process.env.NODE_ENV !== 'production') {
     const outputs = await import('../amplify_outputs.json');
     Amplify.configure(outputs);  
