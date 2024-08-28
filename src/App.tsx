@@ -4,7 +4,7 @@
 // import { generateClient } from "aws-amplify/data";
 import { Authenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
-import { Amplify } from 'aws-amplify';
+// import { Amplify } from 'aws-amplify';
 
 
 // const client = generateClient<Schema>();
