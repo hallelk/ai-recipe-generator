@@ -5,13 +5,19 @@
 import { Authenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
 import { Amplify } from 'aws-amplify';
-import outputs from '../amplify_outputs.json';
 
-Amplify.configure(outputs);
+
 // const client = generateClient<Schema>();
+async function loadConfig() {
+  if (process.env.NODE_ENV !== 'production') {
+    const outputs = await import('../amplify_outputs.json');
+    Amplify.configure(outputs);  
+  }    
+}
 
 function App() {
     
+  loadConfig();
   // function deleteTodo(id: string) {
   //   client.models.Todo.delete({ id })
   // }
